@@ -1,7 +1,9 @@
 # Butterfly-backend
 
-//install all dependences
-npm i 
+first of all install all dependencies
 
-//run proyect
-npm run dev 
+  - npm i 
+
+and to run the project use
+
+ - npm run dev 
