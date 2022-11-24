@@ -7,7 +7,7 @@ import InfoPage from "../models/infoPage.js";
 const createInfoPage = async (req, res) => {
   try {
   req.body.forEach(async infoPage => {
-    
+
     const infoPageStorage = new InfoPage(infoPage)
     await infoPageStorage.save()
   });
@@ -20,6 +20,7 @@ const createInfoPage = async (req, res) => {
 };
 const getInfoPage = async (req, res) => {
   const infoPages = await InfoPage.find().where('description').exists()
+
   res.json(infoPages);
 };
 

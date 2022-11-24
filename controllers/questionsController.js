@@ -19,6 +19,7 @@ const createQuestions = async (req, res) => {
 const getQuestions = async (req, res) => {
   const questions = await Question.find().where('description').exists()
   res.json(questions);
+  console.log('questions:',questions);
 };
 
 const updateQuestion = async (req, res) => {
