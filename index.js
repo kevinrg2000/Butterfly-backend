@@ -4,6 +4,7 @@ import conectDB from "./config/db.js";
 
 import questionsRoutes from "./routes/questionsRoutes.js";
 import infoPageRoutes from "./routes/infoPageRoutes.js";
+import answerRoutes from "./routes/answerRoutes.js";
 import cors from "cors"
 
 const app = express()
@@ -37,6 +38,7 @@ app.use(cors(corsOptions));
 
 app.use("/api/questions", questionsRoutes)
 app.use("/api/infoPage", infoPageRoutes)
+app.use("/api/answer", answerRoutes)
 
 
 const PORT = process.env.PORT || 4000;

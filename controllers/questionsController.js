@@ -1,8 +1,6 @@
 
 import Question from "../models/Questions.js";
 
-
-
 const createQuestions = async (req, res) => {
   try {
   req.body.forEach(async question => {
@@ -15,6 +13,9 @@ const createQuestions = async (req, res) => {
 } catch (error) {
   console.log(error);
 }
+
+
+
 };
 const getQuestions = async (req, res) => {
   const questions = await Question.find().where('description').exists()
@@ -41,7 +42,6 @@ const updateQuestion = async (req, res) => {
     console.log(error);
   }
 };
-
 
 
 export {

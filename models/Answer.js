@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 
 
-const questionSchema = mongoose.Schema(
+const AnswerSchema = mongoose.Schema(
     {
       questionNumber: {
         type: String,
@@ -12,17 +12,16 @@ const questionSchema = mongoose.Schema(
         type: String,
         trim: true,
       },
-      type: {
+      answerString: {
         type: String,
         trim: true,
       },
-      answer: {
+      answerNumber: {
         type: Number,
         trim: true,
-      },
-      
+      },      
     },
   );
 
-const Question = mongoose.model("Question", questionSchema);
+const Question = mongoose.model("Answer", AnswerSchema);
 export default Question;
