@@ -18,9 +18,10 @@ const createQuestions = async (req, res) => {
 
 };
 const getQuestions = async (req, res) => {
-  const questions = await Question.find().where('description').exists()
+  let questions = await Question.find().where('description').exists()
+  questions = questions.sort(()=> {return Math.random() - 0.5});
   res.json(questions);
-  console.log('questions:',questions);
+  
 };
 
 const updateQuestion = async (req, res) => {
@@ -30,7 +31,7 @@ const updateQuestion = async (req, res) => {
     res.status(400).json({msg: "cant find"})
     else{
 
-      question.feedback = req.body.feedback || question.feedback
+      question.type = req.body.type || question.type
       question.answer = req.body.answer || question.answer
       question.description = req.body.description || question.description
       question.questionNumber = req.body.questionNumber || question.questionNumber
